@@ -1,0 +1,29 @@
+{
+  "name": "technologyblog",
+  "version": "1.0.0",
+  "description": "dingyw's blog",
+  "scripts": {
+    "build": "gatsby build",
+    "devlop": "gatsby develop",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dyw/technologyblog.git"
+  },
+  "keywords": [
+    "gatsby",
+    "blog"
+  ],
+  "author": "Ding yuwei <dyw8086@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dyw/technologyblog/issues"
+  },
+  "homepage": "https://github.com/dyw/technologyblog#readme",
+  "dependencies": {
+    "gatsby": "^2.20.12",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

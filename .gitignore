@@ -7,26 +7,23 @@
 *.o
 *.obj
 
-# Precompiled Headers
-*.gch
-*.pch
+# Dependency directories
+node_modules/
+jspm_packages/
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+# gatsby files
+.cache/
+public/
 
-# Fortran module files
-*.mod
-*.smod
+# Local keys
+.env.development
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+# Optional npm cache directory
+.npm
 
-# Executables
-*.exe
-*.out
-*.app
+# Logs
+logs
+*.log
+npm-debug.log*
+
+
