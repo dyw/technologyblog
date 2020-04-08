@@ -1,16 +1,23 @@
-import React from "react"
+import React, { Fragment } from "react"
+import { Link } from "gatsby"
 import { graphql } from "gatsby"
+import { css } from "@emotion/core"
 
-export default ({ data }) => {
-  console.log(data)
+import Card from "../components/card"
+
+const Page = ({ data, pageContext }) => {
+  console.log("pageContext: ", pageContext)
   return (
-    <div>
-      <h2>{data.site.siteMetadata.title}</h2>
-      <p>Hello World</p>
-    </div> 
+    <Fragment>
+      <div>
+        <h2>{data.site.siteMetadata.title}</h2>
+        <p>Hello World</p>
+        <Card title="my blog title" />
+      </div> 
+    </Fragment>
   )
-  
 }
+
 
 export const query = graphql`
   query  {
@@ -39,3 +46,4 @@ export const query = graphql`
       }     
   }
 `
+export default Page

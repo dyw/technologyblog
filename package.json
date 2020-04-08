@@ -28,7 +28,11 @@
     "gatsby-plugin-emotion": "^4.2.1",
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-transformer-remark": "^2.7.1",
+    "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.42.1"
   }
 }

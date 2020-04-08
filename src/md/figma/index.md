@@ -1,7 +1,6 @@
 ---
 title: "figma 开始之旅"
 date: "2020-4-8"
-path: "figma/"
 ---
 
 ## 注册Figma帐号
