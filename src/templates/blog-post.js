@@ -1,14 +1,18 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+//import Content from "../components/content"
+
 const BlogPost = ({ data }) => {
   console.log("blog post template: ", data)
+  
   return (
     <div>
       header
       siderbar
       <div>
-        content
+        <h1>{data.markdownRemark.frontmatter.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html}} />
         <div>
           link
           link
@@ -23,23 +27,11 @@ const BlogPost = ({ data }) => {
 }
 
 export const pageQuery = graphql`
-  fragment post on MarkdownRemark {
-    fields {
-      slug
-    }
-    frontmatter {
-      title
-      date
-    }
-  }
-
-  query BlogPostQuery {
-    allMarkdownRemark {
-      edges {
-        node {
-          id
-          excerpt
-        }
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug} }) {
+      html
+      frontmatter {
+        title
       }
     }
   }
