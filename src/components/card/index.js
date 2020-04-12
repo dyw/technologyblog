@@ -1,7 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import "./index.css"
+import "./index.scss"
+
+import Tag from "../tag"
 
 const Card = ({
   title,
@@ -10,17 +12,22 @@ const Card = ({
   headerImage,
   headerBackgroundColor,
   description,
-  tags = [],
+  tags = ["gatsby"],
 }) => (
   <div>
     <div className="custom-card">
-        Header
-        <div>
-          <span>date</span>
-          <span>tags</span>
-          <Link to="/">{title}</Link>
-          <p>{description}</p>
-          <Link to="/">...阅读全文</Link>
+        <div className="data">
+          <div className="content">
+            <div className="stats">
+              <span className="date">{date}</span>
+              {tags.map(name => (
+                <Tag name={name} count="3" />
+              ))}
+              <Link to="/">{title}</Link>
+              <p>{description}</p>
+              <Link to="/">阅读全文</Link>
+            </div>
+          </div>
         </div>
     </div>
   </div>

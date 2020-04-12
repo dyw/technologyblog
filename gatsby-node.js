@@ -54,3 +54,14 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
+
+exports.onCreateWebpackConfig = ({ plugins, actions }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      plugins.contextReplacement(
+        /highlight\.js\/lib\/languages$/,
+        new RegExp(`^./(${['javascript', 'bash'].join('|')})$`),
+      ),
+    ],
+  })
+}

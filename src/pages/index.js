@@ -7,12 +7,16 @@ import Card from "../components/card"
 
 const Page = ({ data, pageContext }) => {
   console.log("pageContext: ", pageContext)
+  console.log("data: ", data)
   return (
     <Fragment>
       <div>
         <h2>{data.site.siteMetadata.title}</h2>
-        <p>Hello World</p>
-        <Card title="my blog title" />
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <Card title={node.frontmatter.title} description={node.excerpt} 
+                key={node.fields.slug} 
+                date={node.frontmatter.date}/>
+        ))}
       </div> 
     </Fragment>
   )
@@ -36,6 +40,13 @@ export const query = graphql`
           node {
             id
             excerpt
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              date
+            }
           }
         }
       }

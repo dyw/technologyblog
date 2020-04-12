@@ -2,16 +2,17 @@ import React from "react"
 import { graphql } from "gatsby"
 
 //import Content from "../components/content"
+import Header from "../components/header"
 
 const BlogPost = ({ data }) => {
   console.log("blog post template: ", data)
   
   return (
     <div>
-      header
+      <Header title={data.markdownRemark.frontmatter.title} />
       siderbar
       <div>
-        <h1>{data.markdownRemark.frontmatter.title}</h1>
+       
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html}} />
         <div>
           link

@@ -1,0 +1,8 @@
+@import "../../styles/colors.scss"; // Colors
+
+.layout {
+  background-color: $bg;
+  img {
+    max-width: 100%;
+  }
+}

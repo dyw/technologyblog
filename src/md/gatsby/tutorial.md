@@ -1,3 +1,7 @@
+---
+title: "Gatsby 指南"
+---
+
 ## 了解Gatsby积木
 
 ### 使用Gatsby starters
