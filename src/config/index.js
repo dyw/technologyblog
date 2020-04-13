@@ -35,7 +35,7 @@ module.exports = {
     "iconUrl": "https://i.imgur.com/kjt2x52.jpg",
     "wordings": ["GatsbyJS, ReactJS", "全週期開發者"],
     "gaTrackId": "UA-84737574-3",
-    "navbarList": [
+    navbarList: [
       {
         "href": "/guestbook/",
         "title": "留言簿"

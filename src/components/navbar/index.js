@@ -1,8 +1,12 @@
 import React from "react"
 import ReactGA from "react-ga"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faBars } from "@fortawesome/free-solid-svg-icons"
 
 import config from "../../config"
 import { gotoPage } from "../../utils/url"
+
+import Item from "./item"
 
 import "./index.scss"
 
@@ -21,7 +25,7 @@ const Navbar = () => (
     <div className="container">
       <button
         type="button"
-        className="navbar-brand"
+        className="navbar-brand btn btn-default"
         onClick={() => {
           ReactGA.event({
             category: 'User',
@@ -38,13 +42,23 @@ const Navbar = () => (
         data-toggle="collapse"
         data-target="#navbarSupportedContent"
       >
-          icon
+        <FontAwesomeIcon icon={faBars} />
       </button>
-      <div>
-        <ul>
+      <div
+        className="collapse navbar-collapse flex-row-reverse"
+        id="navbarSupportedContent"
+      >
+        <ul className="navbar-nav mr-2">
           {navbarList.map(item => (
-            <li>{item.title}</li>
+           
+            <Item
+              name={item.title}
+              key={item.href}
+              url={item.href}
+              list={item.list}
+            />
           ))}
+          
         </ul>
       </div>
     </div>

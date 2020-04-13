@@ -1,5 +1,6 @@
 ---
-添加自定义的Webpack配置
+title: "添加自定义的Webpack配置"
+date: "2020-03-28"
 ---
 
 要添加自定义webpack配置，请在根目录中创建（如果还没有）gatsby-node.js文件。在这个文件中，导出一个名为onCreateWebpackConfig的函数。

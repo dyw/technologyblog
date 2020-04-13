@@ -21,7 +21,7 @@ const Card = ({
             <div className="stats">
               <span className="date">{date}</span>
               {tags.map(name => (
-                <Tag name={name} count="3" />
+                <Tag name={name} key={name}/>
               ))}
               <Link to="/">{title}</Link>
               <p>{description}</p>
