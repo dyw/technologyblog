@@ -1,6 +1,11 @@
 ---
 title: "Gatsby 指南"
 date: "2020-03-28"
+description: Gatsby指南系列学习
+headerImage: https://i.imgur.com/mAmrmFI.png
+tags:
+  - gatsby
+  - 阅读
 ---
 
 ## 了解Gatsby积木

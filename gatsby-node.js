@@ -1,5 +1,6 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const createPaginatedPage = require(`gatsby-paginate`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
@@ -36,6 +37,9 @@ exports.createPages = async ({ graphql, actions }) => {
             frontmatter {
               title
               date
+              tags
+              description
+              headerImage
             }
           }
         }
@@ -43,13 +47,41 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
   console.log(JSON.stringify(result, null, 4))
+  
+  const { edges } = result.data.allMarkdownRemark
+  const tagSet = new Set()
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  createPaginatedPage({
+    edges,
+    createPage,
+    pageTemplate: `src/templates/index.js`,
+    context: {
+      totalCount: edges.length,
+    },
+    pathPrefix: `pages`,
+    buildPath: (index, pathPrefix) => {
+      if (index > 1) {
+        return `${pathPrefix}/${index}`
+      }
+      return `/`
+    }
+  })
+
+  edges.forEach(({ node }, index ) => {
+    const { id, frontmatter, fields } = node
+    const { tags } = frontmatter
+
+    if (tags) {
+      tags.forEach(item => tagSet.add(item) )
+    }
+
     createPage({
       path: node.fields.slug,
+      tags,
       component: path.resolve(`./src/templates/blog-post.js`),
       context: {
         slug: node.fields.slug,
+        id,
       },
     })
   })
