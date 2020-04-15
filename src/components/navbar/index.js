@@ -50,15 +50,13 @@ const Navbar = () => (
       >
         <ul className="navbar-nav mr-2">
           {navbarList.map(item => (
-           
             <Item
               name={item.title}
               key={item.href}
               url={item.href}
               list={item.list}
             />
-          ))}
-          
+          ))} 
         </ul>
       </div>
     </div>

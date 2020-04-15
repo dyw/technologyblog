@@ -1,10 +1,12 @@
 import React from "react"
 import { Link, StaticQuery, graphql } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { fas } from '@fortawesome/free-brands-svg-icons'
-
+import { faZhihu, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
 
 import config from "../../config"
+import Information from "./information"
+import LatestPost from "./latestpost"
 
 const {
     wordings = [],
@@ -13,7 +15,6 @@ const {
     email,
     iconUrl,
     about,
-    facebook,
   } = config
 
 const Icon = ({ href, icon }) => (
@@ -38,20 +39,17 @@ const Sidebar = ({ totalCount, latestPosts }) => (
       </Link>
       <p className="mb-1">{wordings[0]}</p>
       <p className="mb-3">{wordings[1]}</p>
-      <FontAwesomeIcon icon="zhihu" />
+      
       <Icon
         href={`https://www.zhihu.com/people/${zhihuUsername}`}
-        icon={['fab', 'zhihu']}
+        icon={faZhihu}
       />
       <Icon
         href={`https://github.com/${githubUsername}`}
-        icon={['fab', 'github']}
+        icon={faGithub}
       />
-      <Icon href={`mailto:${email}`} icon={['far', 'envelope']} />
-      {facebook
-        && <Icon href={`https://www.facebook.com/${facebook}/`} icon={['fab', 'facebook']} />
-      }
-      <span>{totalCount}</span>
+      <Icon href={`mailto:${email}`} icon={faEnvelope} />
+      <Information totalCount={totalCount} posts={latestPosts} />
     </div>
   </header>
 )

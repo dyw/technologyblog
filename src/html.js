@@ -52,13 +52,6 @@ export default function HTML(props) {
       />
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.1/jquery.fancybox.min.js" />
 
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-          console.log('Plain JavaScript inside Gatsby!')
-         `
-        }}
-      />
       </body>
     </html>
   )

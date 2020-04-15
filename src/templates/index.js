@@ -50,7 +50,6 @@ const Page = ({ pageContext }) => {
              />
           ))}
         </div>
-
         <div
             className="row"
             style={{
@@ -65,7 +64,7 @@ const Page = ({ pageContext }) => {
               <NavLink test={!last} url={nextUrl} text="Next" />
             </div>
         </div>
-
+        <div className="col-xl-2 col-lg-1 order-3" />
       </div> 
     </Fragment>
   )

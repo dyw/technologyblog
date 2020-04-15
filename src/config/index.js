@@ -33,7 +33,7 @@ module.exports = {
       }
     ],
     "iconUrl": "https://i.imgur.com/kjt2x52.jpg",
-    "wordings": ["GatsbyJS, ReactJS", "全週期開發者"],
+    "wordings": ["GatsbyJS, ReactJS", "全周期专业开发"],
     "gaTrackId": "UA-84737574-3",
     navbarList: [
       {
@@ -46,7 +46,7 @@ module.exports = {
       },
       {
         "href": "/2018/05/01/about-calpa-liu/",
-        "title": "關於作者"
+        "title": "关于作者"
       }
     ],
     "redirectors": [
@@ -63,7 +63,6 @@ module.exports = {
       }
     ],
     "zhihuUsername": "piao-xue-wu-ying",
-    "githubUsername": "calpa",
+    "githubUsername": "dyw",
     "maxPostsInPage": 10,
-    "facebook": "calpablog"
 }
